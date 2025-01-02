@@ -1,0 +1,11 @@
+{
+    "version": "3.8.1",
+    "description": "An icon and cursor editor.",
+    "homepage": "https://icofx.ro/",
+    "license": "Shareware",
+    "url": "https://raw.githubusercontent.com/WisThrG/WinAppRs/refs/heads/main/App-Cracked/IcoFX.7z",
+    "hash": "40156465770588E1C9FFF0807D1BAC182270A38635D9112AE773F8FEE728F6A2",
+    "extract_dir": "IcoFX",
+    "persist": ["Settings"],
+    "shortcuts": [["icofx3.exe", "IcoFX"]]
+}

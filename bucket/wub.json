@@ -1,0 +1,16 @@
+{
+    "version": "1.8",
+    "description": "windows-update-blocker",
+    "homepage": "https://www.sordum.org/",
+    "license": "Freeware",
+    "url": "https://raw.githubusercontent.com/WisThrG/WinAppRs/refs/heads/main/Wub.7z",
+    "hash": "BB38E8947BF140DD541E7B2278A84188C3FD6842E42C194721422FC8CDCF24D8",
+    "extract_dir": "Wub",
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\Wub.ini\") -and !(Test-Path \"$dir\\Wub.ini\")) {",
+        "    New-Item \"$dir\\Wub.ini\" | Out-Null",
+        "}"
+    ],
+    "persist": ["Wub.ini"],
+    "shortcuts": [["Wub.exe", "Wub"]]
+}
