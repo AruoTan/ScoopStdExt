@@ -32,6 +32,14 @@
         }
     },
     "pre_install": "ensure \"$persist_dir\" | Out-Null",
+    "post_install": [
+        "'komorebi-no-console.vbs' | ForEach-Object {",
+        "  if (Test-Path \"$bucketsdir\\std-ext\\scripts\\komorebi\\$_\") {",
+        "    $content = Get-Content \"$bucketsdir\\std-ext\\scripts\\komorebi\\$_\"",
+        "    $content | Set-Content \"$dir\\$_\" -Encoding Ascii",
+        "  }",
+        "}"
+    ],
     "env_set": {
         "KOMOREBI_CONFIG_HOME": "$persist_dir"
     },
