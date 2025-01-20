@@ -3,7 +3,7 @@
     "description": "windows-update-blocker",
     "homepage": "https://www.sordum.org/",
     "license": "Freeware",
-    "url": "https://raw.githubusercontent.com/WisThrG/WinAppRs/refs/heads/main/Wub.7z",
+    "url": "https://raw.githubusercontent.com/AruoTan/WinAppRs/refs/heads/main/Wub.7z",
     "hash": "BB38E8947BF140DD541E7B2278A84188C3FD6842E42C194721422FC8CDCF24D8",
     "extract_dir": "Wub",
     "pre_install": [
