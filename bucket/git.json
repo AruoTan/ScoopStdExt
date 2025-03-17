@@ -47,18 +47,13 @@
         "cmd\\git-gui.exe",
         "cmd\\scalar.exe",
         "usr\\bin\\tig.exe",
+        "usr\\bin\\vim.exe",
+        ["usr\\bin\\vim.exe", "vi.exe"],
         "git-bash.exe"
     ],
     "shortcuts": [
-        [
-            "git-bash.exe",
-            "Git Bash",
-            "--cd-to-home"
-        ],
-        [
-            "cmd\\git-gui.exe",
-            "Git GUI"
-        ]
+        ["git-bash.exe", "Git Bash", "--cd-to-home"],
+        ["cmd\\git-gui.exe", "Git GUI"]
     ],
     "env_set": {
         "GIT_INSTALL_ROOT": "$dir"
