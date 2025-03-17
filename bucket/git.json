@@ -48,7 +48,7 @@
         "cmd\\scalar.exe",
         "usr\\bin\\tig.exe",
         "usr\\bin\\vim.exe",
-        ["usr\\bin\\vim.exe", "vi.exe"],
+        ["usr\\bin\\vim.exe", "vi"],
         "git-bash.exe"
     ],
     "shortcuts": [
