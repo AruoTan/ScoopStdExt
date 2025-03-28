@@ -79,5 +79,6 @@
             "url": "https://github.com/git-for-windows/git/releases/tag/v$matchTag",
             "regex": "(?s)$basename.*?$sha256"
         }
-    }
+    },
+    "persist": "etc\\vimrc"
 }
