@@ -9,7 +9,6 @@
             "hash": "435bea1056424bc5855345736cb5d44f1655d25308daa398be02ff3ec0994842"
         }
     },
-    "bin": ["yasb.exe", "yasbc.exe", "yasb_themes.exe"],
     "shortcuts": [["yasb.exe", "YASB"]],
     "checkver": "github",
     "autoupdate": {
@@ -31,5 +30,6 @@
         "    $obj = \"$bucketsdir\\std-ext\\scripts\\yasb\\$_\"",
         "    Copy-Item $obj -Destination $dir",
         "}"
-    ]
+    ],
+    "bin": ["yasb.exe", "yasbc.exe", "yasb_themes.exe", "yasb-no-console.exe"]
 }
