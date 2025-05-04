@@ -31,13 +31,12 @@
             "url": "$baseurl/checksums.txt"
         }
     },
-    "pre_install": "ensure \"$persist_dir\" | Out-Null",
-    "post_install": [
+    "pre_install": [
+        "ensure \"$persist_dir\" | Out-Null",
+        "$scriptsdir = \"$bucketsdir\\$bucket\\scripts\\$app\"",
         "'komorebi-no-console.vbs' | ForEach-Object {",
-        "  if (Test-Path \"$bucketsdir\\std-ext\\scripts\\komorebi\\$_\") {",
-        "    $content = Get-Content \"$bucketsdir\\std-ext\\scripts\\komorebi\\$_\"",
-        "    $content | Set-Content \"$dir\\$_\" -Encoding Ascii",
-        "  }",
+        "    $obj = \"$scriptsdir\\$_\"",
+        "    Copy-Item $obj -Destination $dir",
         "}"
     ],
     "env_set": {
