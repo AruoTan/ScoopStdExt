@@ -22,7 +22,7 @@
         }
     },
     "pre_install": [
-        "$scriptsdir = \"$bucketsdir\\$bucket\\scripts\\yazi\"",
+        "$scriptsdir = \"$bucketsdir\\$bucket\\scripts\\$app\"",
         "'ya.ps1' | ForEach-Object {",
         "    $obj = \"$scriptsdir\\$_\"",
         "    Copy-Item $obj -Destination $dir",
