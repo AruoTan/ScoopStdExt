@@ -1,0 +1,32 @@
+{
+    "version": "25.4.8",
+    "description": "⚡️ Blazing fast terminal file manager written in Rust, based on async I/O.",
+    "homepage": "https://github.com/sxyazi/yazi",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/sxyazi/yazi/releases/download/v25.4.8/yazi-x86_64-pc-windows-msvc.zip",
+            "hash": "8454d4c9b8ba09a5f5a51f488e603230066e27cce4da54d3c1d91875a9748ba3",
+            "extract_dir": "yazi-x86_64-pc-windows-msvc"
+        }
+    },
+    "checkver": {
+        "url": "https://github.com/sxyazi/yazi/releases",
+        "regex": "tag/v?([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/sxyazi/yazi/releases/download/v$version/yazi-x86_64-pc-windows-msvc.zip"
+            }
+        }
+    },
+    "pre_install": [
+        "$scriptsdir = \"$bucketsdir\\$bucket\\scripts\\yazi\"",
+        "'ya.ps1' | ForEach-Object {",
+        "    $obj = \"$scriptsdir\\$_\"",
+        "    Copy-Item $obj -Destination $dir",
+        "}"
+    ],
+    "bin": ["yazi.exe", "ya.ps1"]
+}
