@@ -45,18 +45,17 @@
         }
     },
     "post_install": [
-        "$dirpath = \"$dir\".Replace('\\', '\\\\')",
+        "$root = \"$dir\".Replace('\\', '\\\\')",
         "$exepath = \"$dir\\Code.exe\".Replace('\\', '\\\\')",
+        "$scriptsdir = \"$bucketsdir\\$bucket\\scripts\\$app\"",
         "'install-associations', 'uninstall-associations', 'install-context', 'uninstall-context', 'install-github-integration', 'uninstall-github-integration' | ForEach-Object {",
-        "  if (Test-Path \"$bucketsdir\\std-ext\\scripts\\vscode\\$_.reg\") {",
-        "    $content = Get-Content \"$bucketsdir\\std-ext\\scripts\\vscode\\$_.reg\"",
-        "    $content = $content.Replace('$codedir', $dirpath)",
+        "    $content = Get-Content \"$scriptsdir\\$_.reg\"",
+        "    $content = $content.Replace('$codedir', $root)",
         "    $content = $content.Replace('$code', $exepath)",
         "    if ($global) {",
-        "      $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE')",
+        "        $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE')",
         "    }",
         "    $content | Set-Content -Path \"$dir\\$_.reg\"",
-        "  }",
         "}",
         "reg import \"$dir\\install-associations.reg\"",
         "if (!(Test-Path \"$dir\\data\\extensions\") -and (Test-Path \"$env:USERPROFILE\\.vscode\\extensions\")) {",
@@ -80,10 +79,5 @@
     ],
     "persist": "data",
     "bin": "code.exe",
-    "shortcuts": [
-        [
-            "code.exe",
-            "Visual Studio Code"
-        ]
-    ]
+    "shortcuts": [["code.exe", "Visual Studio Code"]]
 }
