@@ -9,12 +9,7 @@
             "hash": "a90104c8a4b2b8564e7980962fff68e2e670f44ea482b1b7a66305991c13ead5"
         }
     },
-    "shortcuts": [
-        [
-            "yasb.exe",
-            "YASB"
-        ]
-    ],
+    "shortcuts": [["yasb.exe", "YASB"]],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
@@ -30,16 +25,11 @@
         "YASB_CONFIG_HOME": "$persist_dir"
     },
     "pre_install": [
-        "$yasb_root = \"$dir\".Replace('\\', '\\\\')",
+        "$scriptsdir = \"$bucketsdir\\$bucket\\scripts\\$app\"",
         "'yasb-no-console.exe', 'yasb-no-console.vbs' | ForEach-Object {",
-        "    $obj = \"$bucketsdir\\std-ext\\scripts\\yasb\\$_\"",
+        "    $obj = \"$scriptsdir\\$_\"",
         "    Copy-Item $obj -Destination $dir",
         "}"
     ],
-    "bin": [
-        "yasb.exe",
-        "yasbc.exe",
-        "yasb_themes.exe",
-        "yasb-no-console.exe"
-    ]
+    "bin": ["yasb.exe", "yasbc.exe", "yasb_themes.exe", "yasb-no-console.exe"]
 }
