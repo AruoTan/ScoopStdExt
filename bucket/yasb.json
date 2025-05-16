@@ -9,12 +9,7 @@
             "hash": "b3e5a0b954339a8ef111e9b8693f8eb28faa464c9d81e55d1aff454d3f435529"
         }
     },
-    "shortcuts": [
-        [
-            "yasb.exe",
-            "YASB"
-        ]
-    ],
+    "shortcuts": [["yasb.exe", "YASB"]],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
@@ -30,16 +25,12 @@
         "YASB_CONFIG_HOME": "$persist_dir"
     },
     "pre_install": [
-        "$scriptsdir = \"$bucketsdir\\$bucket\\scripts\\$app\"",
-        "'yasb-no-console.exe', 'yasb-no-console.vbs' | ForEach-Object {",
-        "    $obj = \"$scriptsdir\\$_\"",
-        "    Copy-Item $obj -Destination $dir",
+        "$scriptsdir = \"$bucketsdir\\$bucket\\scripts\"",
+        "'bg-runner.vbs' | ForEach-Object {",
+        "    $content = Get-Content \"$scriptsdir\\$_\"",
+        "    $content = $content.Replace('$app', 'yasb.exe')",
+        "    $content | Set-Content -Path \"$dir\\$_\"",
         "}"
     ],
-    "bin": [
-        "yasb.exe",
-        "yasbc.exe",
-        "yasb_themes.exe",
-        "yasb-no-console.exe"
-    ]
+    "bin": ["yasb.exe", "yasbc.exe", "yasb_themes.exe"]
 }
