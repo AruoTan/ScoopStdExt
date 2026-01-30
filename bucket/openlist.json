@@ -17,17 +17,8 @@
             "hash": "md5:f7268abefedd6f96bf9a7a8772cb5305"
         }
     },
-    "bin": [
-        [
-            "openlist.exe",
-            "openlist",
-            "--force-bin-dir"
-        ]
-    ],
-    "persist": [
-        "data",
-        "log"
-    ],
+    "bin": [["openlist.exe", "openlist", "--force-bin-dir"]],
+    "persist": ["data"],
     "checkver": {
         "github": "https://github.com/OpenListTeam/OpenList"
     },
