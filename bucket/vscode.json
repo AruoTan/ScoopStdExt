@@ -70,13 +70,20 @@
         "if ((Test-Path \"$extensions_file\")) {",
         "    info 'Adjusting path in extensions file...'",
         "    (Get-Content \"$extensions_file\") -replace '(?<=vscode(/|\\\\\\\\)).*?(?=(/|\\\\\\\\)data(/|\\\\\\\\)extensions)', $version | Set-Content \"$extensions_file\"",
-        "}"
+        "}",
+        "",
+        "New-Item -ItemType Directory -Force -Path \"$dir\\data\\tmp\" | Out-Null"
     ],
     "pre_uninstall": [
         "reg import \"$dir\\uninstall-context.reg\" ",
         "reg import \"$dir\\uninstall-associations.reg\" ",
         "reg import \"$dir\\uninstall-github-integration.reg\" "
     ],
+    "env_set": {
+        "COPILOT_HOME": "$dir\\data\\copilot",
+        "COPILOT_CACHE_HOME": "$dir\\data\\copilot-cache",
+        "VSCODE_CLI_DATA_DIR": "$dir\\data\\cli"
+    },
     "persist": "data",
     "bin": "code.exe",
     "shortcuts": [
