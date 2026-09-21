@@ -33,8 +33,5 @@
             "url": "$baseurl/checksums.txt"
         }
     },
-    "persist": [
-        "profiles.yaml",
-        "password.txt"
-    ]
+    "persist": ["profiles.yaml", "rclone-password.ps1", "restic-password.ps1"]
 }
